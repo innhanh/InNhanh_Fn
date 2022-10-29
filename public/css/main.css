@@ -1,0 +1,667 @@
+@font-face {
+  font-family: UTMAvo;
+  src: url("/font/UTM Avo.ttf");
+}
+@font-face {
+  font-family: UTMAvoBold;
+  src: url("/font/UTM AvoBold.ttf");
+}
+@-webkit-keyframes AnimationContact {
+  to {
+    transform: translate(-50%, -50%) scale(1.4);
+    border: 7px solid rgb(235, 48, 48);
+  }
+}
+@keyframes AnimationContact {
+  to {
+    transform: translate(-50%, -50%) scale(1.4);
+    border: 7px solid rgb(235, 48, 48);
+  }
+}
+@-webkit-keyframes AnimationContactRotate {
+  to {
+    transform: rotate(-45deg);
+  }
+}
+@keyframes AnimationContactRotate {
+  to {
+    transform: rotate(-45deg);
+  }
+}
+@-webkit-keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes LeftToRight {
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes LeftToRight {
+  to {
+    transform: translateX(0);
+  }
+}
+html,
+body {
+  font-family: UTMAvo;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.innhanh_title h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: rgb(4, 0, 59);
+  font-style: italic;
+  margin-right: 0.5rem;
+}
+.innhanh_title h3 span {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgb(4, 0, 59);
+  font-family: UTMAvoBold;
+  font-style: normal;
+  text-align: center;
+  background: linear-gradient(to left, #099cf4 20%, rgb(4, 0, 59) 40%, rgb(4, 0, 59) 60%, #099cf4 80%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: ChangeColor 3s linear infinite;
+          animation: ChangeColor 3s linear infinite;
+  animation-direction: reverse;
+}
+
+#hearder .nav_top {
+  background-color: rgb(7, 0, 82);
+}
+#hearder .nav_top .navbar-nav .nav-item .nav-link {
+  font-size: 0.75rem;
+  color: white;
+}
+#hearder .nav_top .navbar-nav .nav-item .nav-link i {
+  margin-right: 0.5rem;
+}
+#hearder .nav_main {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  margin: 0 auto;
+}
+#hearder .nav_main .logo img {
+  max-width: 50px;
+  margin-right: 2rem;
+}
+
+#footer {
+  background-color: rgb(4, 0, 59);
+  color: white;
+  padding: 2rem 0;
+}
+#footer .footer_innhanh .footer_logo {
+  text-align: center;
+}
+#footer .footer_innhanh .footer_logo img {
+  width: 10vw;
+  margin: 0 auto;
+}
+#footer .footer_innhanh .footer_logo p {
+  font-size: 400;
+  font-weight: white;
+  color: 1rem;
+}
+#footer .footer_innhanh .time_worlk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#footer .footer_innhanh .time_worlk i {
+  font-size: 700;
+  font-weight: white;
+  color: 3rem;
+  margin-right: 1rem;
+}
+#footer .footer_innhanh .time_worlk .time {
+  font-size: 400;
+  font-weight: white;
+  color: 1rem;
+}
+#footer .footer_innhanh .time_worlk .time p {
+  margin: 0;
+  text-align: right;
+}
+
+#myCarousel {
+  position: relative;
+  width: 100%;
+  max-height: 500px;
+  margin: 2rem 0;
+  overflow: hidden;
+}
+#myCarousel .carousel .carousel-indicators button {
+  color: #ff6101 !important;
+  z-index: 99999;
+}
+#myCarousel .carousel .carousel-inner .item1 {
+  position: relative;
+  width: 100%;
+  height: 80%;
+}
+#myCarousel .carousel .carousel-inner .item1 .item_1_text {
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+#myCarousel .carousel .carousel-inner .item1 .item_1_text .text_inBanVe {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: rgb(4, 0, 59);
+  transform: translateX(-200%);
+  -webkit-animation-name: LeftToRight;
+          animation-name: LeftToRight;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+}
+#myCarousel .carousel .carousel-inner .item1 .item_1_text .text_inBanVe span {
+  font-family: UTMAvoBold;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgb(4, 0, 59);
+  letter-spacing: 1px;
+}
+#myCarousel .carousel .carousel-inner .item1 .item_1_text .text_inQuangCao {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: rgb(4, 0, 59);
+  transform: translateX(-200%);
+  -webkit-animation-name: LeftToRight;
+          animation-name: LeftToRight;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 8.5s;
+          animation-delay: 8.5s;
+}
+#myCarousel .carousel .carousel-inner .item1 .item_1_text .text_inQuangCao span {
+  font-family: UTMAvoBold;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgb(4, 0, 59);
+  letter-spacing: 1px;
+}
+#myCarousel .carousel .carousel-inner .item1 .item_1_text .text_innhanh {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: rgb(251, 84, 18);
+  transform: translateX(-200%);
+  -webkit-animation-name: LeftToRight;
+          animation-name: LeftToRight;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 8.5s;
+          animation-delay: 8.5s;
+}
+#myCarousel .carousel .carousel-inner .item1 .item_1_text .text_innhanh span {
+  font-family: UTMAvoBold;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: rgb(251, 84, 18);
+}
+#myCarousel .carousel .carousel-inner .item1 .item_1_text .text_innhanh span span {
+  font-family: UTMAvo;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: rgb(4, 0, 59);
+}
+#myCarousel .carousel .carousel-inner .item1 .item_1_text .btn_more {
+  background-color: rgb(4, 0, 59);
+  color: white;
+  padding: 0.5rem 2rem;
+  max-width: 50%;
+  margin: 1rem 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  transition: 0.5s;
+  transform: translateX(-200%);
+  -webkit-animation-name: LeftToRight;
+          animation-name: LeftToRight;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 9s;
+          animation-delay: 9s;
+}
+#myCarousel .carousel .carousel-inner .item1 .item_1_text .btn_more:hover {
+  background-color: white;
+  border: 2px solid rgb(4, 0, 59);
+  color: rgb(4, 0, 59);
+}
+@keyframes LeftToRight {
+  to {
+    transform: translateX(0);
+  }
+}
+#myCarousel .carousel-control-prev {
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  top: 35%;
+  left: 4vw;
+  border-radius: 8px;
+  background-color: rgb(21, 19, 44);
+}
+#myCarousel .carousel-control-next {
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  top: 35%;
+  right: 4vw;
+  border-radius: 8px;
+  background-color: rgb(21, 19, 44);
+}
+
+#bannerHome {
+  overflow: hidden;
+}
+#bannerHome #image1 {
+  width: 40%;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translate(100%, -6%);
+  -webkit-animation-name: image1;
+          animation-name: image1;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+#bannerHome #image2 {
+  width: 60%;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translate(100%, 30%);
+  -webkit-animation-name: image2;
+          animation-name: image2;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+#bannerHome #Bgr_1 {
+  transform: translateX(50%);
+  -webkit-animation-name: Bgr_1;
+          animation-name: Bgr_1;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+#bannerHome #text {
+  transform: translateX(-100%);
+  -webkit-animation-name: AnimationText;
+          animation-name: AnimationText;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+#bannerHome #text #text_i {
+  fill: none;
+  stroke: black;
+  stroke-width: 5px;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  -webkit-animation-name: dashText;
+          animation-name: dashText;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  opacity: 0;
+  transition: 0.5s;
+}
+#bannerHome #text #text_n {
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 5px;
+  -webkit-animation-name: dashText;
+          animation-name: dashText;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  opacity: 0;
+  transition: 0.5s;
+}
+#bannerHome #text #text_N {
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 5px;
+  -webkit-animation-name: dashText;
+          animation-name: dashText;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+  opacity: 0;
+  transition: 1.5s;
+}
+#bannerHome #text #text_H {
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 5px;
+  -webkit-animation-name: dashText;
+          animation-name: dashText;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  opacity: 0;
+  transition: 0.5s;
+}
+#bannerHome #text #text_A {
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 5px;
+  -webkit-animation-name: dashText;
+          animation-name: dashText;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+  opacity: 0;
+  transition: 0.5s;
+}
+#bannerHome #text #text_N2 {
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 5px;
+  -webkit-animation-name: dashText;
+          animation-name: dashText;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+  opacity: 0;
+  transition: 0.5s;
+}
+#bannerHome #text #text_H2 {
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 5px;
+  -webkit-animation-name: dashText;
+          animation-name: dashText;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 5.5s;
+          animation-delay: 5.5s;
+  opacity: 0;
+  transition: 0.5s;
+}
+#bannerHome #text #text_7 {
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 5px;
+  -webkit-animation-name: dashText;
+          animation-name: dashText;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  opacity: 0;
+  transition: 0.5s;
+}
+#bannerHome #text #text_9 {
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 5px;
+  -webkit-animation-name: dashText;
+          animation-name: dashText;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  opacity: 0;
+  transition: 0.5s;
+}
+#bannerHome #line_After {
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 5px;
+  -webkit-animation-name: line_After;
+          animation-name: line_After;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 7s;
+          animation-delay: 7s;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+@-webkit-keyframes image1 {
+  to {
+    transform: translate(60%, -6%);
+    opacity: 1;
+  }
+}
+
+@keyframes image1 {
+  to {
+    transform: translate(60%, -6%);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes image2 {
+  to {
+    transform: translate(50%, 30%);
+    opacity: 1;
+  }
+}
+@keyframes image2 {
+  to {
+    transform: translate(50%, 30%);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes Bgr_1 {
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes Bgr_1 {
+  to {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes dashText {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke: rgb(4, 0, 59);
+    stroke-dashoffset: 0;
+    fill: rgb(4, 0, 59);
+    stroke-width: 0;
+    opacity: 1;
+  }
+}
+@keyframes dashText {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke: rgb(4, 0, 59);
+    stroke-dashoffset: 0;
+    fill: rgb(4, 0, 59);
+    stroke-width: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes line_After {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke: rgb(251, 84, 18);
+    stroke-dashoffset: 0;
+    fill: rgb(4, 0, 59);
+    stroke-width: 10px;
+    opacity: 1;
+  }
+}
+@keyframes line_After {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke: rgb(251, 84, 18);
+    stroke-dashoffset: 0;
+    fill: rgb(4, 0, 59);
+    stroke-width: 10px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes AnimationText {
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes AnimationText {
+  to {
+    transform: translateX(0);
+  }
+}
+#slideBanner .showImg {
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#slideBanner .showImg img {
+  width: 100%;
+  height: 100%;
+}
+#slideBanner .slide_content {
+  margin: 0.5rem 0;
+}
+#slideBanner .slide_content .slide_item {
+  overflow: hidden;
+  width: 100%;
+  height: 15vh;
+  border-radius: 8px;
+  padding: 5px;
+}
+#slideBanner .slide_content .slide_item img {
+  width: 100%;
+  height: 100%;
+}
+
+#login {
+  background-color: red;
+}

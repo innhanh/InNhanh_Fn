@@ -11,6 +11,9 @@ module.exports = {
       userName: {
         type: Sequelize.STRING
       },
+      displayName: {
+        type: Sequelize.STRING
+      },
       pass: {
         type: Sequelize.STRING
       },

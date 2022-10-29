@@ -14,14 +14,16 @@ module.exports = {
     await queryInterface.bulkInsert('Users', [
       {
       userName: "admin",
-      pass: "admin",
+      displayName: "Admin",
+      pass: "123",
       email: "admin@gmail.com",
       phone: "0943830707",
       avatar: "http://localhost:3000/vercel.svg",
       type: "Admin"
     },
     {
-      userName: "admin2",
+      userName: "client",
+      displayName: "Client",
       pass: "admin2",
       email: "admin2@gmail.com",
       phone: "0943830707",
@@ -29,7 +31,8 @@ module.exports = {
       type: "Client"
     },
     {
-      userName: "admin3",
+      userName: "staff",
+      displayName: "Staff",
       pass: "admin3",
       email: "admin2@gmail.com",
       phone: "0943830707",

@@ -48,6 +48,54 @@ module.exports = {
         type: "carousel",
         fileName: "Banner6.jpg"
       },
+      {
+        name: "inbaothu",
+        url: "/img/productions/inbaothu.jpg",
+        type: "Productions",
+        fileName: "inbaothu.jpg"
+      },
+      {
+        name: "innamecard",
+        url: "/img/productions/namecard.jpg",
+        type: "Productions",
+        fileName: "namecard.jpg"
+      },
+      {
+        name: "intoroi",
+        url: "/img/productions/toroi.jpg",
+        type: "Productions",
+        fileName: "toroi.jpg"
+      },
+      {
+        name: "inmenu",
+        url: "/img/productions/menu.jpg",
+        type: "Productions",
+        fileName: "menu.jpg"
+      },
+      {
+        name: "incatalogue",
+        url: "/img/productions/catalogue.jpg",
+        type: "Productions",
+        fileName: "catalogue.jpg"
+      },
+      {
+        name: "infolder",
+        url: "/img/productions/folder.jpg",
+        type: "Productions",
+        fileName: "folder.jpg"
+      },
+      {
+        name: "inhoadon",
+        url: "/img/productions/bill.jpg",
+        type: "Productions",
+        fileName: "bill.jpg"
+      },
+      {
+        name: "inticker",
+        url: "/img/productions/ticker.jpg",
+        type: "Productions",
+        fileName: "ticker.jpg"
+      },
     ], {});
   },
 

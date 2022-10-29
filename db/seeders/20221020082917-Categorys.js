@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     /**
      * Add seed commands here.
      *
@@ -11,26 +11,40 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-     await queryInterface.bulkInsert('Categorys', [
+    await queryInterface.bulkInsert('Categorys', [
       {
-         name: 'In Nhanh',      
-       },
-       {
-        name: 'In Quảng Cáo',      
+        name: 'PageSystem',
       },
       {
-        name: 'In Bản Vẽ',      
+        name: 'Home',
       },
-      ], {});
+      {
+        name: 'In Nhanh',
+        href: "innhanh"
+      },
+      {
+        name: 'In Quảng Cáo',
+        href: "inquangcao"
+      },
+      {
+        name: 'In Bản vẽ',
+      },
+      {
+        name: 'Dịch Vụ Thiết Kế',
+      },
+      {
+        name: 'Setup Events',
+      },
+    ], {});
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
      *
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-     await queryInterface.bulkDelete('Categorys', null, {});
+    await queryInterface.bulkDelete('Categorys', null, {});
   }
 };

@@ -1,14 +1,15 @@
 'use strict';
-
-const fs = require('fs');
-const path = require('path');
 const Sequelize = require('sequelize');
-const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 const Categorys = require("./categorys");
 const Images = require("./images");
+const Users = require("./users");
+const Companys = require("./companys");
+const Branchs = require("./branchs");
+const Pages = require("./pages");
+const Productions = require("./productions");
 
 let sequelize;
 if (config.use_env_variable) {
@@ -23,9 +24,19 @@ if (config.use_env_variable) {
 //     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
 //   })
 //   .forEach(file => {
+//     // const model = require(__dirname + '/../db/models/' + file)(sequelize, Sequelize.DataTypes);
 //     const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
 //     db[model.name] = model;
 //   });
+
+
+db.Categorys = Categorys(sequelize, Sequelize);
+db.Images = Images(sequelize, Sequelize);
+db.Users = Users(sequelize, Sequelize);
+db.Companys = Companys(sequelize, Sequelize);
+db.Branchs = Branchs(sequelize, Sequelize);
+db.Pages = Pages(sequelize, Sequelize);
+db.Productions = Productions(sequelize, Sequelize);
 
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
@@ -33,9 +44,9 @@ Object.keys(db).forEach(modelName => {
   }
 });
 
-db.Categorys = Categorys(sequelize, Sequelize);
-db.Images = Images(sequelize, Sequelize);
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
+
+

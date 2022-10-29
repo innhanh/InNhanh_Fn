@@ -1,0 +1,29 @@
+@keyframes AnimationContact {
+    to {
+        transform: translate(-50%, -50%) scale(1.4);
+        border: 7px solid rgb(235, 48, 48);
+    }
+}
+
+@keyframes AnimationContactRotate {
+    to {
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-3px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes LeftToRight {
+    to {
+        transform: translateX(0);
+    }
+}

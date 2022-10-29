@@ -1,0 +1,31 @@
+html,
+body {
+    font-family: UTMAvo;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.innhanh_title {
+    h3 {
+        @include textStyle($color-bg, 2rem, 400);
+        font-style: italic;
+        margin-right: 0.5rem;
+        span {
+            @include textStyle($color-bg, 2.5rem, 700);
+            font-family: UTMAvoBold;
+            font-style: normal;
+            text-align: center;
+
+            background: linear-gradient(to left, #099cf4 20%, $color-bg 40%, $color-bg 60%, #099cf4 80%);
+            background-size: 200% auto;
+
+            color: #000;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            animation: ChangeColor 3s linear infinite;
+            animation-direction: reverse;
+        }
+    }
+}

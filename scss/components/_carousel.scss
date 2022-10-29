@@ -1,0 +1,118 @@
+#myCarousel {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    margin: 2rem 0;   
+    overflow: hidden;
+    .carousel {
+        .carousel-indicators {
+            button {
+                color: #ff6101 !important;
+                z-index: 99999;
+            }
+        }
+        .carousel-inner {
+            .item1 {
+                position: relative;
+                width: 100%;
+                height: 80%;
+                .item_1_text {
+                    position: absolute;
+                    top: 60%;
+                    left: 10%;
+                    transform: translateY(-50%);
+                    .text_inBanVe {
+                        @include textStyle($color-bg, 2.5rem, 300);
+                        transform: translateX(-200%);
+                        animation-name: LeftToRight;
+                        animation-duration: 3s;
+                        animation-iteration-count: 1;
+                        animation-fill-mode: forwards;
+                        animation-delay: 8s;
+                        span {
+                            font-family: UTMAvoBold;
+                            @include textStyle($color-bg, 2.5rem, 700);
+                            letter-spacing: 1px;
+                        }
+                    }
+                    .text_inQuangCao {
+                        @include textStyle($color-bg, 2.5rem, 300);
+                        transform: translateX(-200%);
+                        animation-name: LeftToRight;
+                        animation-duration: 2s;
+                        animation-iteration-count: 1;
+                        animation-fill-mode: forwards;
+                        animation-delay: 8.5s;
+                        span {
+                            font-family: UTMAvoBold;
+                            @include textStyle($color-bg, 2.5rem, 700);
+                            letter-spacing: 1px;
+                        }
+                    }
+                    .text_innhanh {
+                        @include textStyle($color-orange, 2.5rem, 300);
+                        transform: translateX(-200%);
+                        animation-name: LeftToRight;
+                        animation-duration: 2s;
+                        animation-iteration-count: 1;
+                        animation-fill-mode: forwards;
+                        animation-delay: 8.5s;
+                        span {
+                            font-family: UTMAvoBold;
+                            @include textStyle($color-orange, 2.5rem, 300);
+                            span {
+                                font-family: UTMAvo;
+                                @include textStyle($color-bg, 2.5rem, 300);
+                            }
+                        }
+                    }
+                    .btn_more {
+                        background-color: $color-bg;
+                        color: white;
+                        padding: 0.5rem 2rem;
+                        max-width: 50%;
+                        margin: 1rem 0;
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                        transition: 0.5s;
+                        transform: translateX(-200%);
+                        animation-name: LeftToRight;
+                        animation-duration: 1.5s;
+                        animation-iteration-count: 1;
+                        animation-fill-mode: forwards;
+                        animation-delay: 9s;
+                        &:hover {
+                            background-color: white;
+                            border: 2px solid $color-bg;
+                            color: $color-bg;
+                        }
+
+                        @keyframes LeftToRight {
+                            to {
+                                transform: translateX(0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .carousel-control-prev {
+        position: absolute;
+        width: 4vw;
+        height: 4vw;
+        top: 35%;
+        left: 4vw;
+        border-radius: 8px;
+        background-color: $colordark-300;
+    }
+    .carousel-control-next {
+        position: absolute;
+        width: 4vw;
+        height: 4vw;
+        top: 35%;
+        right: 4vw;
+        border-radius: 8px;
+        background-color: $colordark-300;
+    }
+}

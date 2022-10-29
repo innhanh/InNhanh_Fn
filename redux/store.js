@@ -3,6 +3,7 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
 
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER, } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import AdminSlice from "./adminSlice";
 import DataSlice from "./dataSlice";
 
 
@@ -12,7 +13,8 @@ const persistConfig = {
     storage,
 };
 const rootReducer = combineReducers({
-    DataSlice: DataSlice.reducer
+    DataSlice: DataSlice.reducer,
+    AdminSlice: AdminSlice.reducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

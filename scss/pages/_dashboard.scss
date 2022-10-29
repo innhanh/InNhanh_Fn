@@ -1,0 +1,26 @@
+#dashboard {
+    .controller {
+        align-items: center;
+        .admin {
+            .avatar {
+                width: 100px;
+                height: 100px;
+                border: 2px solid black;
+                text-align: center;
+                border-radius: 50%;
+                position: relative;
+                margin: 0 auto;
+                img {
+                    max-width: 70px;
+
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+    .dashboard_main {
+    }
+}

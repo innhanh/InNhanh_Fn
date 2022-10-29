@@ -1,0 +1,226 @@
+#bannerHome {
+    overflow: hidden;
+    #image1 {
+        width: 40%;
+        opacity: 0;
+        transition: 0.5s;
+        transform: translate(100%, -6%);
+        animation-name: image1;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        animation-delay: 1.5s;
+    }
+    #image2 {
+        width: 60%;
+        opacity: 0;
+        transition: 0.5s;
+        transform: translate(100%, 30%);
+        animation-name: image2;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        animation-delay: 2s;
+    }
+    #Bgr_1 {
+        transform: translateX(50%);
+        animation-name: Bgr_1;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+    }
+    #text {
+        transform: translateX(-100%);
+        animation-name: AnimationText;
+        animation-duration: 5s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        #text_i {
+            fill: none;
+            stroke: black;
+            stroke-width: 5px;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation-name: dashText;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-delay: 2s;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        #text_n {
+            fill: none;
+            stroke: black;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            stroke-width: 5px;
+            animation-name: dashText;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-delay: 3s;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        #text_N {
+            fill: none;
+            stroke: black;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            stroke-width: 5px;
+            animation-name: dashText;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-delay: 3.5s;
+            opacity: 0;
+            transition: 1.5s;
+        }
+        #text_H {
+            fill: none;
+            stroke: black;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            stroke-width: 5px;
+            animation-name: dashText;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-delay: 4s;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        #text_A {
+            fill: none;
+            stroke: black;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            stroke-width: 5px;
+            animation-name: dashText;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-delay: 4.5s;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        #text_N2 {
+            fill: none;
+            stroke: black;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            stroke-width: 5px;
+            animation-name: dashText;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-delay: 5s;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        #text_H2 {
+            fill: none;
+            stroke: black;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            stroke-width: 5px;
+            animation-name: dashText;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-delay: 5.5s;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        #text_7 {
+            fill: none;
+            stroke: black;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            stroke-width: 5px;
+            animation-name: dashText;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-delay: 6s;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        #text_9 {
+            fill: none;
+            stroke: black;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            stroke-width: 5px;
+            animation-name: dashText;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-delay: 6s;
+            opacity: 0;
+            transition: 0.5s;
+        }
+    }
+    #line_After {
+        fill: none;
+        stroke: black;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        stroke-width: 5px;
+        animation-name: line_After;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        animation-delay: 7s;
+        opacity: 0;
+        transition: 0.5s;
+    }
+}
+@keyframes image1 {
+    to {
+        transform: translate(60%, -6%);
+        opacity: 1;
+    }
+}
+@keyframes image2 {
+    to {
+        transform: translate(50%, 30%);
+        opacity: 1;
+    }
+}
+@keyframes Bgr_1 {
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes dashText {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke: $color-bg;
+        stroke-dashoffset: 0;
+        fill: $color-bg;
+        stroke-width: 0;
+        opacity: 1;
+    }
+}
+@keyframes line_After {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke: $color-orange;
+        stroke-dashoffset: 0;
+        fill: $color-bg;
+        stroke-width: 10px;
+        opacity: 1;
+    }
+}
+@keyframes AnimationText {
+    to {
+        transform: translateX(0);
+    }
+}

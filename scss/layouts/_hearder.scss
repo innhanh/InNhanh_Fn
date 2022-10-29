@@ -1,0 +1,28 @@
+#hearder {
+    .nav_top {
+        background-color: rgb(7, 0, 82);
+        .navbar-nav {
+            .nav-item {
+                .nav-link {
+                    font-size: 0.75rem;
+                    color: white;
+                    i {
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+    .nav_main {
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        margin: 0 auto;
+
+        .logo {
+            img {
+                max-width: 50px;
+                margin-right: 2rem;
+            }
+        }
+    }
+}

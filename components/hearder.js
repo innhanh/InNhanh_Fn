@@ -1,39 +1,108 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { ApiClients } from '../apiConfig/axiosClients';
-import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Container, Navbar, Nav, NavDropdown, Button, ButtonGroup } from "react-bootstrap";
+import { useDispatch, useSelector } from 'react-redux';
+import { AdminSelector } from '../redux/selector/admin';
+import { LogoutSuccess } from '../redux/adminSlice';
+import { toast } from 'react-toastify';
+import { PagesSuccess } from '../redux/dataSlice';
+import { DataSelector } from '../redux/selector/data';
 
 function Hearder(props) {
-    const [categorys, setCate] = useState([]);
+    const [system, setSystem] = useState([]);
+    const admin = useSelector(AdminSelector.Admin);
+
+    const dispath = useDispatch();
+
     useEffect(() => {
         const GetHearder = async () => {
-            await ApiClients.Categorys(setCate);
+            await ApiClients.Categorys(dispath, PagesSuccess);
         };
         GetHearder();
     }, []);
+
+    useEffect(() => {
+        const GetPagesSystem = async () => {
+            await ApiClients.GetPagesByCate(1, setSystem)
+        };
+        GetPagesSystem();
+    }, []);
+
+    const handleLogout = async () => {
+        toast.success("Logout successfully!")
+        dispath(LogoutSuccess());
+    };
+
+    const Pages = useSelector(DataSelector.Pages);
+    const PageSystem = Pages[0];
+    const PagesNavs = Pages?.filter(page => page.id !== 1);
+
     return (
         <div id='hearder'>
-            <Container>
-                <Navbar bg="light" expand="lg">
-                    <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+            <Navbar className='nav_top'>
+                <Container>
+                    <Nav className="me-auto">
+                        {
+                            PageSystem?.Pages?.map((page, index) => {
+                                return (
+                                    <Nav.Item key={index}>
+                                        <Nav.Link href={page.href}>
+                                            <i className="fa fa-angle-right"></i>
+                                            {page.name}
+                                        </Nav.Link>
+                                    </Nav.Item>
+                                )
+                            })
+                        }
+                    </Nav>
+                </Container>
+
+            </Navbar>
+
+            <Navbar className='nav_main' bg="light" expand="lg">
+                <Container>
+                    <Navbar.Brand className='logo' href="/">
+                        <img src={"/logo/logo.png"} alt='logo' className='w-100 img-fluid' />
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
+                        <Nav className="">
+                            {
+                                PagesNavs.map((page, index) => {
+                                    return (
+                                        page.Pages.length > 1 ?
+                                            <NavDropdown key={index} title={page.name} id="basic-nav-dropdown">
+                                                {
+                                                    page.Pages.map((menu, i) => {
+                                                        return (
+                                                            <NavDropdown.Item href={`/${page.href}/${menu.href}`}>{menu.name}</NavDropdown.Item>
+                                                        )
+                                                    })
+                                                }
 
-                            <NavDropdown title="In Nhanh" id="basic-nav-dropdown">
-                                <NavDropdown.Divider />
+                                            </NavDropdown>
+
+                                            :
+
+                                            <Nav.Item key={index}>
+                                                <Nav.Link href={page.Pages[0].href}>{page.name}</Nav.Link>
+                                            </Nav.Item>
+
+                                    )
+
+                                })
+                            }
+
+                            {/* <NavDropdown title="In Nhanh" id="basic-nav-dropdown">
+
                                 <NavDropdown.Item href="/innhanh/tuigiay">In Túi Giấy</NavDropdown.Item>
                                 <NavDropdown.Item href="/innhanh/namecard">In Name Card</NavDropdown.Item>
                                 <NavDropdown.Item href="/innhanh/brochure">In Brochure</NavDropdown.Item>
-                                <NavDropdown.Divider />
+
                             </NavDropdown>
 
-                            <NavDropdown title="In Quảng Cáo" id="basic-nav-dropdown">
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="/inquangcao/pp">In PP</NavDropdown.Item>
-                                <NavDropdown.Item href="/inquangcao/decal">In Decal</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                            </NavDropdown>
+                           
 
                             <Nav.Item>
                                 <Nav.Link href='/inbanve'>In Bản vẽ</Nav.Link>
@@ -45,12 +114,31 @@ function Hearder(props) {
 
                             <Nav.Item>
                                 <Nav.Link href='/setupevents'>Setup Events</Nav.Link>
-                            </Nav.Item>
+                            </Nav.Item> */}
 
                         </Nav>
+
+                        {
+                            admin.userName &&
+                            <Nav className="ms-auto">
+                                <Nav.Item>
+                                    <ButtonGroup>
+                                        <Button disabled>
+                                            <span className='admin_avatar'>
+                                                <img src={admin.avatar} alt={`${admin.userName}_avatar`} />
+                                            </span>
+                                            {admin.userName}
+                                        </Button>
+                                        <Button onClick={() => handleLogout()}>Logout</Button>
+                                    </ButtonGroup>
+                                </Nav.Item>
+                            </Nav>
+                        }
                     </Navbar.Collapse>
-                </Navbar>
-            </Container>
+                </Container>
+            </Navbar>
+
+
         </div>
     );
 }

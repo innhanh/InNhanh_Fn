@@ -1,0 +1,42 @@
+#footer {
+    background-color: $blue700;
+    color: white;
+    padding: 2rem 0;
+
+    .footer_innhanh {
+        .footer_logo {
+            text-align: center;
+
+            img {
+                width: 10vw;
+                margin: 0 auto;
+            }
+
+            p {
+                @include textStyle(1rem, 400, white);
+
+            }
+        }
+
+        .time_worlk {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            i {
+                @include textStyle(3rem, 700, white);
+                margin-right: 1rem;
+            }
+
+            .time {
+                @include textStyle(1rem, 400, white);
+
+                p {
+                    margin: 0;
+                    text-align: right;
+                }
+
+            }
+        }
+    }
+}

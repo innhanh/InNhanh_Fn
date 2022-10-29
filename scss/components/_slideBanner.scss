@@ -1,0 +1,26 @@
+#slideBanner {
+    .showImg {
+        width: 100%;
+        height: 40vh;
+        overflow: hidden;
+        border-radius: 10px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .slide_content {
+        margin: 0.5rem 0;
+        .slide_item {
+            overflow: hidden;
+            width: 100%;
+            height: 15vh;
+            border-radius: 8px;
+        padding: 5px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
