@@ -3,8 +3,9 @@ import { Button, Card, Col, Container, ListGroup, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { ApiClients } from '../apiConfig/axiosClients';
 import Banner from '../components/carousels';
+import ListPartner from '../components/partners';
 import SlideBanner from '../components/slideBanner';
-import { ProductionSuccess } from '../redux/dataSlice';
+import { PartnerSuccess, ProductionSuccess } from '../redux/dataSlice';
 import { DataSelector } from '../redux/selector/data';
 
 const ArrImages = [
@@ -36,9 +37,19 @@ export default function Home() {
     GetProductions();
   }, []);
 
+  useEffect(() => {
+    const GetPartners = async () => {
+      await ApiClients.Partners(dispath, PartnerSuccess);
+    };
+
+    GetPartners();
+  }, [])
+
 
   const Productions = useSelector(DataSelector.Productions);
-  console.log(Productions)
+  const Partners = useSelector(DataSelector.Partners);
+  console.log(Partners);
+
   return (
     <div id='homePage'>
       <Banner />
@@ -81,8 +92,8 @@ export default function Home() {
               {
                 Productions?.map((produc, index) => {
                   return (
-                    <Col key={index} xs={4}>
-                      <Card style={{ width: '25rem' }}>
+                    <Col key={index} xs={12} sm={6} xxl={4}>
+                      <Card>
                         <Card.Img variant="top" src={produc.Image.url} />
                         <Card.Body>
                           <Card.Title>{produc.name}</Card.Title>
@@ -92,7 +103,7 @@ export default function Home() {
                             <ListGroup.Item>Loại Giấy: {produc.typePaper}</ListGroup.Item>
                             <ListGroup.Item>{produc.tag}</ListGroup.Item>
                           </ListGroup>
-                          <Button variant="primary">Go somewhere</Button>
+                          <Button variant="primary">Xem Thêm</Button>
                         </Card.Body>
                       </Card>
                     </Col>
@@ -102,6 +113,16 @@ export default function Home() {
               }
             </Row>
           </div>
+        </Container>
+      </div>
+      <div id='partners'>
+        <Container>
+          <div className='innhanh_title'>
+            <h3 className='mb-3'>Đối tác <span>INNHANH79</span></h3>
+          </div>
+          <ListPartner
+            ArrImages={Partners}
+          />
         </Container>
       </div>
     </div>

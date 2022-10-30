@@ -4,11 +4,13 @@ body {
     font-size: 16px;
     box-sizing: border-box;
 }
+
 .innhanh_title {
     h3 {
         @include textStyle($color-bg, 2rem, 400);
         font-style: italic;
         margin-right: 0.5rem;
+
         span {
             @include textStyle($color-bg, 2.5rem, 700);
             font-family: UTMAvoBold;
@@ -28,4 +30,13 @@ body {
             animation-direction: reverse;
         }
     }
+}
+
+.scroll-to-top {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
 }

@@ -10,6 +10,7 @@ const Companys = require("./companys");
 const Branchs = require("./branchs");
 const Pages = require("./pages");
 const Productions = require("./productions");
+const Partners = require("./partners");
 
 let sequelize;
 if (config.use_env_variable) {
@@ -37,6 +38,7 @@ db.Companys = Companys(sequelize, Sequelize);
 db.Branchs = Branchs(sequelize, Sequelize);
 db.Pages = Pages(sequelize, Sequelize);
 db.Productions = Productions(sequelize, Sequelize);
+db.Partners = Partners(sequelize, Sequelize);
 
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {

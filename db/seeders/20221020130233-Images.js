@@ -96,6 +96,56 @@ module.exports = {
         type: "Productions",
         fileName: "ticker.jpg"
       },
+      //Partners
+      {
+        name: "bca",
+        url: "/img/partners/bca.png",
+        type: "Partners",
+        fileName: "bca.png"
+      },
+      {
+        name: "cmn",
+        url: "/img/partners/CMN.png",
+        type: "Partners",
+        fileName: "CMN.png"
+      },
+      {
+        name: "hnam",
+        url: "/img/partners/hnam.png",
+        type: "Partners",
+        fileName: "hnam.png"
+      },
+      {
+        name: "hp",
+        url: "/img/partners/hp.png",
+        type: "Partners",
+        fileName: "hp.png"
+      },
+      {
+        name: "nagecco",
+        url: "/img/partners/nagecco.png",
+        type: "Partners",
+        fileName: "nagecco.png"
+      },
+      {
+        name: "thecliff",
+        url: "/img/partners/thecliff.png",
+        type: "Partners",
+        fileName: "thecliff.png"
+      },
+      {
+        name: "thefine",
+        url: "/img/partners/thefine.jpg",
+        type: "Partners",
+        fileName: "thefine.jpg"
+      },
+      {
+        name: "vinhome",
+        url: "/img/partners/vinhome.png",
+        type: "Partners",
+        fileName: "vinhome.png"
+      },
+      
     ], {});
   },
 

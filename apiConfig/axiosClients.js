@@ -72,5 +72,19 @@ export const ApiClients = {
                 toast.error(err)
             }
         })
+    },
+    Partners: async (dispath, PartnerSuccess) => {
+        await rootApi({
+            method: "GET",
+            url: "/clients/partners"
+        }).then((res) => {
+            dispath(PartnerSuccess(res.data.Partners))
+        }).catch((err) => {
+            if (err.response) {
+                toast.error(err.response.data.error)
+            } else {
+                toast.error(err)
+            }
+        })
     }
 }

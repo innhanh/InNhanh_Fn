@@ -11,6 +11,7 @@ import { DataSelector } from '../redux/selector/data';
 
 function Hearder(props) {
     const [system, setSystem] = useState([]);
+    const [scrollY, setScrollY] = useState();
     const admin = useSelector(AdminSelector.Admin);
 
     const dispath = useDispatch();
@@ -38,9 +39,47 @@ function Hearder(props) {
     const PageSystem = Pages[0];
     const PagesNavs = Pages?.filter(page => page.id !== 1);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            setScrollY(currentScrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    useEffect(() => {
+        const ScrollBar = () => {
+            const hearderTop = window.document.getElementById("hearder_top");
+            const hearderMain = window.document.getElementById("hearder_main");
+            const btnScroll = window.document.getElementById("btn_scroll");
+
+            if (scrollY > 173) {
+                hearderTop.classList.add("hide");
+                hearderMain.classList.add("scroll-to-top");
+                // btnScroll.classList.add("btnShow");
+            } else {
+                hearderTop.classList.remove("hide");
+                hearderMain.classList.remove("scroll-to-top");
+                // btnScroll.classList.remove("btnShow");
+            }
+        };
+
+        ScrollBar();
+    }, [scrollY]);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
     return (
         <div id='hearder'>
-            <Navbar className='nav_top'>
+            <Navbar className='nav_top' id='hearder_top'>
                 <Container>
                     <Nav className="me-auto">
                         {
@@ -60,7 +99,7 @@ function Hearder(props) {
 
             </Navbar>
 
-            <Navbar className='nav_main' bg="light" expand="lg">
+            <Navbar className='nav_main' bg="light" expand="lg" id='hearder_main'>
                 <Container>
                     <Navbar.Brand className='logo' href="/">
                         <img src={"/logo/logo.png"} alt='logo' className='w-100 img-fluid' />

@@ -6,6 +6,7 @@ const DataSlice = createSlice({
         Pages: [],
         Carousels: [],
         Productions: [],
+        Partners: [],
         Company: [],
         Branchs: []
     },
@@ -19,6 +20,9 @@ const DataSlice = createSlice({
         ProductionSuccess: (state, actions) => {
             state.Productions = actions.payload;
         },
+        PartnerSuccess: (state, actions) => {
+            state.Partners = actions.payload;
+        },
         CompanySuccess: (state, actions) => {
             state.Company = actions.payload;
         },
@@ -31,6 +35,7 @@ export const {
     PagesSuccess,
     CarouselSuccess,
     ProductionSuccess,
+    PartnerSuccess,
     CompanySuccess,
     BranchsSccess
 } = DataSlice.actions;

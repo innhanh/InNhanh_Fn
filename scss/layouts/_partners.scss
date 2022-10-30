@@ -1,0 +1,27 @@
+#partners {
+    #listPartner {
+        .slick-slider {
+            .slick-list {
+                .slick-track {
+                    .slick-slide {
+                        .partner_item {
+                            width: 200px;
+                            height: 200px;                         
+                            overflow: hidden;
+                            padding: 20px 25px;
+                            position: relative;
+
+                            img {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                max-width: 100%;                              
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
