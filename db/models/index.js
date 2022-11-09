@@ -11,6 +11,10 @@ const Branchs = require("./branchs");
 const Pages = require("./pages");
 const Productions = require("./productions");
 const Partners = require("./partners");
+const Maintenances = require("./maintenances");
+const TimeWorks = require("./timeworks");
+const Texts = require("./texts");
+const RefreshTokens = require("./refreshtokens");
 
 let sequelize;
 if (config.use_env_variable) {
@@ -18,19 +22,6 @@ if (config.use_env_variable) {
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
-
-// fs
-//   .readdirSync(__dirname)
-//   .filter(file => {
-//     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
-//   })
-//   .forEach(file => {
-//     // const model = require(__dirname + '/../db/models/' + file)(sequelize, Sequelize.DataTypes);
-//     const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
-//     db[model.name] = model;
-//   });
-
-
 db.Categorys = Categorys(sequelize, Sequelize);
 db.Images = Images(sequelize, Sequelize);
 db.Users = Users(sequelize, Sequelize);
@@ -39,6 +30,10 @@ db.Branchs = Branchs(sequelize, Sequelize);
 db.Pages = Pages(sequelize, Sequelize);
 db.Productions = Productions(sequelize, Sequelize);
 db.Partners = Partners(sequelize, Sequelize);
+db.Maintenances = Maintenances(sequelize, Sequelize);
+db.TimeWorks = TimeWorks(sequelize, Sequelize);
+db.Texts = Texts(sequelize, Sequelize);
+db.RefreshTokens = RefreshTokens(sequelize, Sequelize);
 
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {

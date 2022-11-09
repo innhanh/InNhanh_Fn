@@ -9,72 +9,62 @@ function Footer(props) {
     const dispath = useDispatch();
     useEffect(() => {
         const GetCompany = async () => {
-            await ApiClients.Company(dispath, CompanySuccess, BranchsSccess)
+            await ApiClients.Company(dispath, CompanySuccess)
         };
         GetCompany();
     }, []);
 
     const company = useSelector(DataSelector.Company);
-    const branchs = useSelector(DataSelector.Branchs);
-
-    const SlipeTime = (text) => {
-        const arr = text?.split("&&");
-        return (
-            <div className='time_worlk'>
-                <p>{arr[0]}</p>
-                <p>{arr[1]}</p>
-                <p>{arr[2]}</p>
-            </div>
-        )
-    };
-
-    const SlipePhone = (phone) => {
-        const arr = phone.split("&&");
-        return (
-            <>
-                <a href={`tel:${arr[0]}`}>{arr[0]}</a>
-                <a href={`tel:${arr[1]}`}>{arr[1]}</a>
-            </>
-
-        )
-    };
 
     return (
         <div id='footer'>
             <Container>
                 <Row>
-                    <Col xs={3}>
+                    <Col xs={12} sm={6} lg={6} xl={3}>
                         <div className='footer_company'>
                             <div className='footer_item'>
-                                <img src={company?.logo} alt='logo' className='w-100 img-fluid' />
+                                <img src={company?.Image.url} alt='logo' className='w-100 img-fluid' />
                                 <p>{company?.website}</p>
-                                {
-                                    company?.time
-                                }
+                                <p>{company?.TimeWork.week}</p>
+                                <p>Sáng: {company?.TimeWork.morning}</p>
+                                <p>Chiều: {company?.TimeWork.afternoon}</p>
                             </div>
                         </div>
                     </Col>
 
                     {
-                        branchs?.map((branch, index) => {
+                        company.Branchs?.map((branch, index) => {
                             return (
-                                <Col key={index} xs={3}>
+                                <Col key={index} xs={12} md={6} xl={3}>
                                     <div className='footer_item'>
                                         <div className='footer_hearder'>
                                             <h2>{branch.name}</h2>
                                         </div>
                                         <div className='footer_main'>
                                             <div className='branch_itro'>
-                                                <p>{branch.adress}</p>
+                                                <p>
+                                                    <i className="fa fa-map-marker-alt"></i>
+                                                    {branch.adress}
+                                                </p>
                                             </div>
                                             <div className='branch_itro'>
-                                                {SlipePhone(branch.phone)}
+                                                <p>
+                                                    <i className="fa fa-phone-volume"></i>
+                                                    {branch.phone}
+                                                </p>
+
                                             </div>
                                             <div className='branch_itro'>
-                                                <p>{branch.email}</p>
+                                                <p>
+                                                    <i className="fa fa-envelope"></i>
+                                                    {branch.email}
+                                                </p>
                                             </div>
                                             <div className='branch_itro'>
-                                                <p>{branch.zalo}</p>
+                                                <p>
+                                                    <i className="fa fa-mobile-alt"></i>
+                                                    {branch.zalo}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -83,7 +73,7 @@ function Footer(props) {
                         })
                     }
 
-                    <Col xs={3}>
+                    <Col xs={12} md={6} xl={3}>
                         <div className='footer_item'>
                             <div className='footer_hearder'>
                                 <h2>Phản Hồi</h2>

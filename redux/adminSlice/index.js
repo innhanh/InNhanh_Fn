@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const AdminSlice = createSlice({
     name: "admin",
     initialState: {
-        Admin: []
+        Admin: [],
     },
     reducers: {
         LoginSuccess: (state, actions) => {
@@ -12,11 +12,15 @@ const AdminSlice = createSlice({
         LogoutSuccess: (state, actions) => {
             state.Admin = [];
         },
+        EditAdminSuccess: (state, actions) => {
+            state.Admin.Admin = actions.payload;
+        }
     }
 });
 export const {
     LoginSuccess,
-    LogoutSuccess
+    LogoutSuccess,
+    EditAdminSuccess
 } = AdminSlice.actions;
 
 export default AdminSlice;

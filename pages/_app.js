@@ -6,37 +6,33 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { persistor, Store } from '../redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
-import { Provider } from 'react-redux';
+import { Provider, useDispatch } from 'react-redux';
 import Hearder from '../components/hearder';
 import Footer from '../components/footer';
 
 function InNhanh({ Component, pageProps }) {
+
   return (
-    <>
-      <Provider store={Store}>
+    <Provider store={Store}>
 
-        <PersistGate loading={null} persistor={persistor}>
-          <Hearder />
-          <Component {...pageProps} />
-          <Footer />
+      <PersistGate loading={null} persistor={persistor}>
+        <Hearder />
+        <Component {...pageProps} />
+        <Footer />
+        <ToastContainer
+          position="bottom-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+      </PersistGate>
 
-          <ToastContainer
-            position="bottom-right"
-            autoClose={3000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
-        </PersistGate>
-
-      </Provider>
-
-    </>
-
+    </Provider>
   )
 }
 

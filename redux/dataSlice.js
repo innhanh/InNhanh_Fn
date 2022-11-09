@@ -3,16 +3,21 @@ import { createSlice } from "@reduxjs/toolkit";
 const DataSlice = createSlice({
     name: "data",
     initialState: {
-        Pages: [],
+        Maintances: false,
+        Categorys: [],
         Carousels: [],
         Productions: [],
         Partners: [],
         Company: [],
-        Branchs: []
+        Branchs: [],
+        IntroImages: []
     },
     reducers: {
-        PagesSuccess: (state, actions) => {
-            state.Pages = actions.payload;
+        MaintanceSuccess: (state, actions) => {
+            state.Maintances = actions.payload
+        },
+        CategorySuccess: (state, actions) => {
+            state.Categorys = actions.payload;
         },
         CarouselSuccess: (state, actions) => {
             state.Carousels = actions.payload;
@@ -28,16 +33,22 @@ const DataSlice = createSlice({
         },
         BranchsSccess: (state, actions) => {
             state.Branchs = actions.payload;
+        },
+        IntroImageSuccess: (state, actions) => {
+            state.IntroImages = actions.payload
         }
+
     }
 });
 export const {
-    PagesSuccess,
+    MaintanceSuccess,
+    CategorySuccess,
     CarouselSuccess,
     ProductionSuccess,
     PartnerSuccess,
     CompanySuccess,
-    BranchsSccess
+    BranchsSccess,
+    IntroImageSuccess
 } = DataSlice.actions;
 
 export default DataSlice;

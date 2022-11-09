@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsTo(models.Images, { foreignKey: "avatar" });
+      this.hasOne(models.RefreshTokens, { foreignKey: "idUser" });
     }
   }
   Users.init({
@@ -19,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     pass: DataTypes.STRING,
     email: DataTypes.STRING,
     phone: DataTypes.STRING,
-    avatar: DataTypes.STRING,
+    avatar: DataTypes.INTEGER,
     type: DataTypes.STRING
   }, {
     sequelize,

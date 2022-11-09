@@ -14,8 +14,7 @@ module.exports = {
     await queryInterface.bulkInsert('Companys', [{
       name: "InNhanh79",
       website: "www.innhanh79.vn",
-      time: "Thứ 2 - Thứ 7&&Sáng: 8h00 - 12h00&&Chiều: 13h30 - 18h30",
-      logo: "/logo/logo.png"
+      logo: 23
     }], {});
   },
 

@@ -11,6 +11,7 @@
 @import "./layouts/footer";
 @import "./layouts/productions";
 @import "./layouts//partners";
+@import "./layouts/system";
 
 //components
 @import "./components/carousel";
@@ -21,6 +22,7 @@
 //pages
 @import "./pages/home";
 @import "./pages/login";
+@import "./pages/dashboard";
 
 //themes
 @import "./themes/dark";

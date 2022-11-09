@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { ApiClients } from '../apiConfig/axiosClients';
 import { Container, Navbar, Nav, NavDropdown, Button, ButtonGroup } from "react-bootstrap";
@@ -6,38 +5,38 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AdminSelector } from '../redux/selector/admin';
 import { LogoutSuccess } from '../redux/adminSlice';
 import { toast } from 'react-toastify';
-import { PagesSuccess } from '../redux/dataSlice';
+import { CategorySuccess, PagesSuccess } from '../redux/dataSlice';
 import { DataSelector } from '../redux/selector/data';
+import { useRouter } from 'next/router';
 
 function Hearder(props) {
-    const [system, setSystem] = useState([]);
+    const Company = useSelector(DataSelector.Company);
     const [scrollY, setScrollY] = useState();
-    const admin = useSelector(AdminSelector.Admin);
+    const Admin = useSelector(AdminSelector.Admin).Admin;
+    const accessToken = useSelector(AdminSelector.Admin).accessToken;
 
     const dispath = useDispatch();
+    const router = useRouter();
 
     useEffect(() => {
-        const GetHearder = async () => {
-            await ApiClients.Categorys(dispath, PagesSuccess);
+        const GetAllCategorys = async () => {
+            await ApiClients.Categorys(dispath, CategorySuccess);
         };
-        GetHearder();
-    }, []);
-
-    useEffect(() => {
-        const GetPagesSystem = async () => {
-            await ApiClients.GetPagesByCate(1, setSystem)
-        };
-        GetPagesSystem();
+        GetAllCategorys();
     }, []);
 
     const handleLogout = async () => {
         toast.success("Logout successfully!")
         dispath(LogoutSuccess());
+        router.replace("/");
     };
 
-    const Pages = useSelector(DataSelector.Pages);
-    const PageSystem = Pages[0];
-    const PagesNavs = Pages?.filter(page => page.id !== 1);
+    const Categorys = useSelector(DataSelector.Categorys);
+
+    const PageSystem = Categorys?.filter(page => page.name === "PageSystem")[0];
+
+    const PagesNavs = Categorys?.filter(page => page.name !== "PageSystem");
+    console.log(PagesNavs)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -96,13 +95,11 @@ function Hearder(props) {
                         }
                     </Nav>
                 </Container>
-
             </Navbar>
-
             <Navbar className='nav_main' bg="light" expand="lg" id='hearder_main'>
                 <Container>
                     <Navbar.Brand className='logo' href="/">
-                        <img src={"/logo/logo.png"} alt='logo' className='w-100 img-fluid' />
+                        <img src={Company.Image.url} alt={Company.Image.name} className='w-100 img-fluid' />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
@@ -119,54 +116,27 @@ function Hearder(props) {
                                                         )
                                                     })
                                                 }
-
                                             </NavDropdown>
-
                                             :
-
                                             <Nav.Item key={index}>
                                                 <Nav.Link href={page.Pages[0].href}>{page.name}</Nav.Link>
                                             </Nav.Item>
-
                                     )
-
                                 })
                             }
-
-                            {/* <NavDropdown title="In Nhanh" id="basic-nav-dropdown">
-
-                                <NavDropdown.Item href="/innhanh/tuigiay">In Túi Giấy</NavDropdown.Item>
-                                <NavDropdown.Item href="/innhanh/namecard">In Name Card</NavDropdown.Item>
-                                <NavDropdown.Item href="/innhanh/brochure">In Brochure</NavDropdown.Item>
-
-                            </NavDropdown>
-
-                           
-
-                            <Nav.Item>
-                                <Nav.Link href='/inbanve'>In Bản vẽ</Nav.Link>
-                            </Nav.Item>
-
-                            <Nav.Item>
-                                <Nav.Link href='/thietke'>Dịch Vụ Thiết Kế</Nav.Link>
-                            </Nav.Item>
-
-                            <Nav.Item>
-                                <Nav.Link href='/setupevents'>Setup Events</Nav.Link>
-                            </Nav.Item> */}
 
                         </Nav>
 
                         {
-                            admin.userName &&
+                            accessToken &&
                             <Nav className="ms-auto">
                                 <Nav.Item>
-                                    <ButtonGroup>
-                                        <Button disabled>
+                                    <ButtonGroup className='admin'>
+                                        <Button disabled className='d-flex'>
                                             <span className='admin_avatar'>
-                                                <img src={admin.avatar} alt={`${admin.userName}_avatar`} />
+                                                <img src={Admin?.Image.url} alt={`${Admin?.userName}_avatar`} />
                                             </span>
-                                            {admin.userName}
+                                            {Admin?.userName}
                                         </Button>
                                         <Button onClick={() => handleLogout()}>Logout</Button>
                                     </ButtonGroup>

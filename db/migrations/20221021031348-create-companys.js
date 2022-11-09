@@ -13,12 +13,13 @@ module.exports = {
       },
       website: {
         type: Sequelize.STRING
-      },
-      time: {
-        type: Sequelize.STRING
-      },
+      },    
       logo: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Images",
+          key: "id"
+        }
       },
       createdAt: {
         allowNull: false,

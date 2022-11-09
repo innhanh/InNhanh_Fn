@@ -2,12 +2,12 @@ import { toast } from "react-toastify"
 import { rootApi } from "./apiConfig";
 
 export const ApiClients = {
-    Categorys: async (dispath, PageSuccess) => {
+    Categorys: async (dispath, CategorySuccess) => {
         await rootApi({
             method: "GET",
             url: "/clients/pages"
         }).then((res) => {
-            dispath(PageSuccess(res.data.Pages));
+            dispath(CategorySuccess(res.data.Pages));
         }).catch((err) => {
             if (err.response) {
                 toast.error(err.response.data.error)
@@ -16,27 +16,12 @@ export const ApiClients = {
             }
         })
     },
-    Carousel: async (setCarousel) => {
+    Company: async (dispath, CompanySuccess) => {
         await rootApi({
             method: "GET",
-            url: "/clients/carousels"
-        }).then((res) => {
-            setCarousel(res.data.Carousels)
-        }).catch((err) => {
-            if (err.response) {
-                toast.error(err.response.data.error)
-            } else {
-                toast.error(err)
-            }
-        })
-    },
-    Company: async (dispath, CompanySuccess, BranchsSccess) => {
-        await rootApi({
-            method: "GET",
-            url: "/clients/company"
+            url: "/clients/companys"
         }).then((res) => {
             dispath(CompanySuccess(res.data.Company));
-            dispath(BranchsSccess(res.data.Branchs));
         }).catch((err) => {
             if (err.response) {
                 toast.error(err.response.data.error)
@@ -86,5 +71,21 @@ export const ApiClients = {
                 toast.error(err)
             }
         })
+    },
+    Images: {
+        GetImageByType: async (type, dispath, ActionSuccess) => {
+            await rootApi({
+                method: "GET",
+                url: `/clients/images/${type}`
+            }).then((res) => {
+                dispath(ActionSuccess(res.data.List))
+            }).catch((err) => {
+                if (err.response) {
+                    toast.error(err.response.data.error)
+                } else {
+                    toast.error(err)
+                }
+            })
+        }
     }
 }

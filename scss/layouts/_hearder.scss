@@ -1,11 +1,13 @@
 #hearder {
     .nav_top {
         background-color: rgb(7, 0, 82);
+
         .navbar-nav {
             .nav-item {
                 .nav-link {
                     font-size: 0.75rem;
                     color: white;
+
                     i {
                         margin-right: 0.5rem;
                     }
@@ -13,6 +15,7 @@
             }
         }
     }
+
     .nav_main {
         background-color: white;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -22,6 +25,28 @@
             img {
                 max-width: 50px;
                 margin-right: 2rem;
+            }
+        }
+
+        .admin {
+            .admin_avatar {
+                width: 30px;
+                height: 30px;
+                border: 1px solid white;
+                border-radius: 50%;
+                overflow: hidden;
+                position: relative;
+                margin-right: 0.5rem;  
+                padding: 0.325rem;
+
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 100%;  
+                                
+                }
             }
         }
     }

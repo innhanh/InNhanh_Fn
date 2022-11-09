@@ -7,6 +7,8 @@ import { ApiAdmin } from '../../apiConfig/axiosAdmin';
 import { LoginSuccess } from '../../redux/adminSlice';
 
 function AdminLogin(props) {
+    const [showPass, setShowPass] = useState("");
+
     const dispath = useDispatch();
     const router = useRouter();
     const [userName, setUserName] = useState("");
@@ -21,7 +23,7 @@ function AdminLogin(props) {
         <div id=' adminLogin'>
             <Container>
                 <InputGroup className="mb-3">
-                    <InputGroup.Text id="basic-userName">@</InputGroup.Text>
+                    <InputGroup.Text id="basic-userName"><i className="fa fa-user"></i></InputGroup.Text>
                     <Form.Control
                         type="text"
                         placeholder="Username"
@@ -33,27 +35,62 @@ function AdminLogin(props) {
                 </InputGroup>
 
                 <InputGroup className="mb-3">
-                    <InputGroup.Text id="basic-pass">@</InputGroup.Text>
+                    <InputGroup.Text id="basic-pass"><i className="fa fa-user-lock"></i></InputGroup.Text>
                     <Form.Control
-                        type="password"
+                        type={showPass === "pass" ? "text" : "password"}
                         placeholder="Password"
                         aria-label="Password"
                         aria-describedby="basic-pass"
                         onChange={(e) => setPass(e.target.value)}
                         value={pass}
+                        id="pass"
                     />
+                    {
+                        showPass === "pass" ?
+                            <Button
+                                onClick={() => setShowPass("")}
+                                variant="outline-secondary"
+                                id="button-addon2">
+                                Hide
+                            </Button>
+                            :
+                            <Button
+                                onClick={() => setShowPass("pass")}
+                                variant="outline-secondary"
+                                id="button-addon2">
+                                Show
+                            </Button>
+                    }
+
                 </InputGroup>
 
                 <InputGroup className="mb-3">
-                    <InputGroup.Text id="basic-key">@</InputGroup.Text>
+                    <InputGroup.Text id="basic-key"><i className="fa fa-key"></i></InputGroup.Text>
                     <Form.Control
-                        type="password"
+                        type={showPass === "key" ? "text" : "password"}
                         placeholder="Admin Key"
                         aria-label="Key"
                         aria-describedby="basic-key"
                         onChange={(e) => setKey(e.target.value)}
                         value={key}
+                        id="key"
                     />
+                    {
+                        showPass === "key" ?
+                            <Button
+                                onClick={() => setShowPass("")}
+                                variant="outline-secondary"
+                                id="button-addon2">
+                                Hide
+                            </Button>
+                            :
+                            <Button
+                                onClick={() => setShowPass("key")}
+                                variant="outline-secondary"
+                                id="button-addon2">
+                                Show
+                            </Button>
+                    }
                 </InputGroup>
 
                 <ButtonGroup aria-label="Basic example">

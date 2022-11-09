@@ -1,26 +1,38 @@
 #dashboard {
-    .controller {
-        align-items: center;
-        .admin {
-            .avatar {
-                width: 100px;
-                height: 100px;
-                border: 2px solid black;
-                text-align: center;
-                border-radius: 50%;
-                position: relative;
-                margin: 0 auto;
-                img {
-                    max-width: 70px;
+    .dashboard_content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
 
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
+        .dashboard_main {
+            .dashboard_admin {
+                .avatar {
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    border: 2px solid rgb(221, 9, 9);
+                    position: relative;
+                   margin: 20px 0;
+
+                    img {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 100%;
+                        padding: 1.5rem;
+                    }
+                }
+            }
+            .dashboard_controller{
+                .controller_item{
+                    button{
+                        width: 100%;
+                    }
                 }
             }
         }
-    }
-    .dashboard_main {
+
+        .dashboard_views {}
     }
 }

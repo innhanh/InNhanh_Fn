@@ -12,42 +12,44 @@ module.exports = {
      * }], {});
     */
     await queryInterface.bulkInsert('Images', [
+      //Banner 6
       {
         name: "banner1",
         url: "/img/carousels/Banner1.jpg",
-        type: "carousel",
+        type: "Carousel",
         fileName: "Banner1.jpg"
       },
       {
         name: "banner2",
         url: "/img/carousels/Banner2.jpg",
-        type: "carousel",
+        type: "Carousel",
         fileName: "Banner2.jpg"
       },
       {
         name: "banner3",
         url: "/img/carousels/Banner3.jpg",
-        type: "carousel",
+        type: "Carousel",
         fileName: "Banner3.jpg"
       },
       {
         name: "banner4",
         url: "/img/carousels/Banner4.jpg",
-        type: "carousel",
+        type: "Carousel",
         fileName: "Banner4.jpg"
       },
       {
         name: "banner5",
         url: "/img/carousels/Banner5.jpg",
-        type: "carousel",
+        type: "Carousel",
         fileName: "Banner5.jpg"
       },
       {
         name: "banner6",
         url: "/img/carousels/Banner6.jpg",
-        type: "carousel",
+        type: "Carousel",
         fileName: "Banner6.jpg"
       },
+      //Productions 8
       {
         name: "inbaothu",
         url: "/img/productions/inbaothu.jpg",
@@ -96,7 +98,7 @@ module.exports = {
         type: "Productions",
         fileName: "ticker.jpg"
       },
-      //Partners
+      //Partners 8
       {
         name: "bca",
         url: "/img/partners/bca.png",
@@ -145,17 +147,49 @@ module.exports = {
         type: "Partners",
         fileName: "vinhome.png"
       },
-      
+      //Logo 1
+      {
+        name: "logo",
+        url: "/img/logo/logo.png",
+        type: "Logo",
+        fileName: "logo.png"
+      },
+      //Intro 4
+      {
+        name: "intro1",
+        url: "/img/intro/intro1.jpg",
+        type: "Intro",
+        fileName: "intro1.jpg"
+      },
+      {
+        name: "intro2",
+        url: "/img/intro/intro2.jpg",
+        type: "Intro",
+        fileName: "intro2.jpg"
+      },
+      {
+        name: "intro3",
+        url: "/img/intro/intro3.jpg",
+        type: "Intro",
+        fileName: "intro3.jpg"
+      },
+      {
+        name: "intro4",
+        url: "/img/intro/intro4.jpg",
+        type: "Intro",
+        fileName: "intro4.jpg"
+      },
+      //Avatar
+      {
+        name: "avatar",
+        url: "/img/avatar/avatar.png",
+        type: "Avatar",
+        fileName: "avatar.png"
+      },
+
     ], {});
   },
-
   async down(queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
     await queryInterface.bulkDelete('Images', null, {});
   }
 };

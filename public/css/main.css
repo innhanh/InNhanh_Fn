@@ -93,6 +93,23 @@ body {
   max-width: 50px;
   margin-right: 2rem;
 }
+#hearder .nav_main .admin .admin_avatar {
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin-right: 0.5rem;
+  padding: 0.325rem;
+}
+#hearder .nav_main .admin .admin_avatar img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
 
 #footer {
   background-color: rgb(4, 0, 59);
@@ -160,10 +177,22 @@ body {
   max-width: 100%;
 }
 
+#system {
+  background-color: aqua;
+}
+#system .company .company_item {
+  padding: 1rem;
+}
+#system .company .company_item .company_logo {
+  width: 100%;
+}
+#system .company .company_item .company_logo img {
+  width: 100%;
+}
+
 #myCarousel {
   position: relative;
   width: 100%;
-  max-height: 500px;
   margin: 2rem 0;
   overflow: hidden;
 }
@@ -516,10 +545,16 @@ body {
   height: 40vh;
   overflow: hidden;
   border-radius: 10px;
+  position: relative;
 }
 #slideBanner .showImg img {
   width: 100%;
   height: 100%;
+}
+#slideBanner .showImg .btn_show {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 #slideBanner .slide_content {
   margin: 0.5rem 0;
@@ -530,12 +565,43 @@ body {
   height: 15vh;
   border-radius: 8px;
   padding: 5px;
+  position: relative;
 }
 #slideBanner .slide_content .slide_item img {
   width: 100%;
   height: 100%;
 }
+#slideBanner .slide_content .slide_item .btn_slideBanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 #login {
   background-color: red;
+}
+
+#dashboard .dashboard_content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#dashboard .dashboard_content .dashboard_main .dashboard_admin .avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid rgb(221, 9, 9);
+  position: relative;
+  margin: 20px 0;
+}
+#dashboard .dashboard_content .dashboard_main .dashboard_admin .avatar img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 1.5rem;
+}
+#dashboard .dashboard_content .dashboard_main .dashboard_controller .controller_item button {
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */

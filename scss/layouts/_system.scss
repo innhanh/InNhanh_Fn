@@ -1,0 +1,14 @@
+#system{
+    background-color: aqua;
+    .company{
+        .company_item{
+            padding: 1rem;
+            .company_logo{
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

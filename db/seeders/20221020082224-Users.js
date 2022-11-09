@@ -18,27 +18,9 @@ module.exports = {
       pass: "123",
       email: "admin@gmail.com",
       phone: "0943830707",
-      avatar: "http://localhost:3000/vercel.svg",
+      avatar: 28,
       type: "Admin"
-    },
-    {
-      userName: "client",
-      displayName: "Client",
-      pass: "admin2",
-      email: "admin2@gmail.com",
-      phone: "0943830707",
-      avatar: "http://localhost:3000/vercel.svg",
-      type: "Client"
-    },
-    {
-      userName: "staff",
-      displayName: "Staff",
-      pass: "admin3",
-      email: "admin2@gmail.com",
-      phone: "0943830707",
-      avatar: "http://localhost:3000/vercel.svg",
-      type: "Staff"
-    },
+    }   
   ], {});
   },
 
